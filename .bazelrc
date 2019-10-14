@@ -42,7 +42,7 @@ build:release --workspace_status_command="node ./tools/bazel-stamp-vars.js"
 
 # Use the legacy AOT compiler strategy. We don't want to compile with Ivy nor with "ngtsc" which
 # does not generate factory files which are needed for AOT.
-build --define=compile=legacy
+build --define=compile=aot
 
 #######################
 # Remote HTTP Caching #

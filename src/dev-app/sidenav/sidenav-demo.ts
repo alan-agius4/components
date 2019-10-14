@@ -25,7 +25,18 @@ export class SidenavDemo {
   showFooter = false;
   modeIndex = 0;
   hasBackdrop: boolean;
-  get mode() { return ['side', 'over', 'push'][this.modeIndex]; }
+  get mode(): 'side' | 'over' | 'push' {
+    switch (this.modeIndex) {
+      case 0:
+        return 'side';
+      case 1:
+        return 'over';
+      case 2:
+        return 'push';
+      default:
+        return 'side';
+    }
+  }
   get fixedTop() { return this.fixed && this.showHeader && !this.coverHeader ? 64 : 0; }
   get fixedBottom() { return this.fixed && this.showFooter && !this.coverHeader ? 64 : 0; }
 }
